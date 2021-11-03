@@ -10,7 +10,7 @@ public class DatabaseConnection {
 
 
     public Connection getConnection(){
-        String databaseName = "microchip";
+        String databaseName = "microchipapp";
         String databaseUser = "";
         String databasePassword = "";
         String url = "jdbc:mysql://localhost/" +databaseName;

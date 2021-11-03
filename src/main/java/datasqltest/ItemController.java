@@ -40,7 +40,7 @@ public class ItemController {
         DatabaseConnection connectionNow = new DatabaseConnection();
         Connection connectionDB = connectionNow.getConnection();
 
-        String connectQuery = "SELECT * FROM microchip.product";
+        String connectQuery = "SELECT * FROM microchipapp.product";
 
         try {
             Statement statement = connectionDB.createStatement();

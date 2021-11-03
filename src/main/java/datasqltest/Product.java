@@ -3,6 +3,8 @@ package datasqltest;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Product {
     private String id_P;//8B01,8B02..,16B01,16B01
@@ -68,20 +70,20 @@ public class Product {
         DatabaseConnection connectionNows = new DatabaseConnection();
         Connection connectDB = connectionNows.getConnection();
 
-                String insertField = "INSERT INTO product(id_p, name_p, price_p, quantity_p, image_p) VALUES('";
-                String insertValues = idProduct + "','" + nameProduct + "','" + price + "','" + quantity + "','" + imagePath + "')";
-                String insertToProduct = insertField + insertValues;
+        String insertField = "INSERT INTO microchipapp.product(id_P, name_P, price_P, all_quantity_P, image_P) VALUES('";
+        String insertValues = idProduct + "','" + nameProduct + "','" + price + "','" + quantity + "','" + imagePath + "')";
+        String insertToProduct = insertField + insertValues;
 
 
-                try {
-                    Statement statement = connectDB.createStatement();
-                    statement.executeUpdate(insertToProduct);
+        try {
+            Statement statement = connectDB.createStatement();
+            statement.executeUpdate(insertToProduct);
 
 
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    e.getCause();
-                }}
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }}
     public boolean isInt(String str) {
 
         try {
@@ -107,7 +109,7 @@ public class Product {
     public boolean checkProduct(String idProduct, String nameProduct, String imagePath){
         DatabaseConnection connectionNow = new DatabaseConnection();
         Connection connectionDB = connectionNow.getConnection();
-        String connectQuery = "SELECT * FROM microchip.product";
+        String connectQuery = "SELECT * FROM microchipapp.product";
 
         try {
             Statement statement = connectionDB.createStatement();
@@ -132,6 +134,12 @@ public class Product {
 //        System.out.println("4");
         return false;
     }
+
+//    public String lastActiveTime(){
+//        LocalDateTime lastActiveTime = LocalDateTime.now();
+//        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+//        return lastActiveTime.format(format);
+//    }
 
 
 

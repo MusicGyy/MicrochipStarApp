@@ -73,7 +73,7 @@ public class MarketViewController implements Initializable {
         Connection connectionDB = connectNow.getConnection();
 //        System.out.println("aaaaaa");
         //SQL Query - Executed in the backed database
-        String productViewQuery = "SELECT * FROM microchip.product";
+        String productViewQuery = "SELECT * FROM microchipapp.product";
 //            ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM restadvisor.name");
         try {
 
@@ -82,11 +82,11 @@ public class MarketViewController implements Initializable {
             while (queryOutput.next()){
 //                System.out.println("-----");
                 product = new Product();
-                product.setId_P(queryOutput.getString("id_p"));
-                product.setImage_P(queryOutput.getString("image_p"));
-                product.setName_P(queryOutput.getString("name_p"));
-                product.setPrice_P(queryOutput.getFloat("price_p"));
-                product.setQuantity_P(queryOutput.getInt("quantity_p"));
+                product.setId_P(queryOutput.getString("id_P"));
+                product.setImage_P(queryOutput.getString("image_P"));
+                product.setName_P(queryOutput.getString("name_P"));
+                product.setPrice_P(queryOutput.getFloat("price_P"));
+                product.setQuantity_P(queryOutput.getInt("all_quantity_P"));
 //                System.out.println(queryOutput.getString("id_p"));
                 // Populate the ObservableList
                 products.add(product);
@@ -156,7 +156,7 @@ public class MarketViewController implements Initializable {
         DatabaseConnection connectionNow = new DatabaseConnection();
         Connection connectionDB = connectionNow.getConnection();
 
-        String connectQuery = "SELECT * FROM microchip.product";
+        String connectQuery = "SELECT * FROM microchipapp.product";
 
         try {
             Statement statement = connectionDB.createStatement();

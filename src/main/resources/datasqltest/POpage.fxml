@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="datasqltest.POController">
+   <children>
+      <TextField fx:id="quantity" layoutX="33.0" layoutY="92.0" promptText="จำนวน" />
+      <ChoiceBox fx:id="ChoiceProductName" layoutX="32.0" layoutY="37.0" prefHeight="31.0" prefWidth="213.0" />
+      <TextField fx:id="name" layoutX="32.0" layoutY="167.0" promptText="ชื่อ" />
+      <TextField fx:id="phone" layoutX="32.0" layoutY="211.0" promptText="เบอร์" />
+      <TextField fx:id="email" layoutX="33.0" layoutY="263.0" promptText="อีเมล" />
+      <Button fx:id="evidenceButton" layoutX="42.0" layoutY="517.0" mnemonicParsing="false" onAction="#handleUploadButton" text="ใส่หลักฐาน" />
+      <Button fx:id="confirmButton" layoutX="176.0" layoutY="558.0" mnemonicParsing="false" onAction="#buyProductButtonOnAction" prefWidth="61.0" text="ยืนยัน" />
+      <Button fx:id="cancelButton" layoutX="42.0" layoutY="558.0" mnemonicParsing="false" text="ยกเลิก" />
+      <Label layoutX="34.0" layoutY="14.0" text="สินค้า" />
+      <Label layoutX="31.0" layoutY="69.0" text="จำนวน" />
+      <Label layoutX="438.0" layoutY="15.0" text="ราการสินค้า">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="132.0" text="ข้อมูลลูกค้า" />
+      <TextArea fx:id="address" layoutX="32.0" layoutY="305.0" prefHeight="200.0" prefWidth="200.0" promptText="ที่อยู่" />
+      <Label layoutX="526.0" layoutY="365.0" text="ราคารวม :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="total_price_text" layoutX="626.0" layoutY="365.0" text="ราคารวม">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="productView" fitHeight="150.0" fitWidth="200.0" layoutX="399.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="evidenceView" fitHeight="150.0" fitWidth="200.0" layoutX="245.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../evidence/2021-11-03_1635935615819.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="backButton" layoutX="717.0" layoutY="20.0" mnemonicParsing="false" text="back" />
+      <Label layoutX="534.0" layoutY="288.0" text="ชื่อสินค้า :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="504.0" layoutY="325.0" text="จำนวนสินค้า :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameText" layoutX="626.0" layoutY="288.0" text="Label">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="quantityText" layoutX="626.0" layoutY="325.0" text="Label">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="evidenceTexT" layoutX="139.0" layoutY="522.0" text="เป็นเลขบัญชี" />
+      <Label fx:id="error" layoutX="232.0" layoutY="560.0" prefHeight="21.0" prefWidth="168.0" />
+      <Line endX="400.0" layoutX="400.0" layoutY="236.0" startX="9.0" />
+      <Line endX="9.5" endY="300.0" layoutX="399.0" layoutY="300.0" startX="9.5" startY="-63.5" />
+      <Label layoutX="557.0" layoutY="250.0" text="ข้อมูลใบสั่งซื้อ">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="409.0" layoutY="410.0" text="ข้อมูลลูกค้า">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="516.0" layoutY="410.0" text="ชื่อ:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="510.0" layoutY="449.0" text="เบอร์:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="511.0" layoutY="539.0" text="ที่อยู่:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="509.0" layoutY="492.0" text="อีเมล:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="summaryShowNameLabel" layoutX="558.0" layoutY="415.0" prefHeight="27.0" prefWidth="242.0" text="...">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="summaryShowPhoneLabel" layoutX="560.0" layoutY="454.0" prefHeight="27.0" prefWidth="242.0" text="...">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="summaryShowMailLabel" layoutX="560.0" layoutY="497.0" prefHeight="27.0" prefWidth="242.0" text="...">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="summaryShowAddressLabel" layoutX="560.0" layoutY="544.0" prefHeight="45.0" prefWidth="242.0" text="...">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="summaryB" layoutX="95.0" layoutY="558.0" mnemonicParsing="false" onAction="#summaryButton" text="สรุปรายการ" />
+      <Line endX="475.0" endY="150.0" layoutX="327.0" layoutY="250.0" startX="81.0" startY="150.0" />
+   </children>
+</AnchorPane>

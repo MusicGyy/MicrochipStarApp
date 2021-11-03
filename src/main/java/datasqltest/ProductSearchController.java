@@ -9,20 +9,28 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,7 +59,8 @@ public class ProductSearchController implements Initializable {
     private Label warning,editWarning;
     @FXML
     private TextField idPro_Field, namePro_Field, pricePro_Field, quantityPro_Field,imagePro_Field;
-
+    @FXML
+    private Text imagePro_Text;
     @FXML
     private Button inQuantity_Button, addProduct_Button, editQuantityButton;
     @FXML
@@ -59,6 +68,7 @@ public class ProductSearchController implements Initializable {
 
     @FXML
     private ImageView imageView;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resource) {
@@ -80,6 +90,7 @@ public class ProductSearchController implements Initializable {
         clear_Button.setDisable(false);
         editWarning.setText("");
         warning.setText("");
+        imageView.setVisible(true);
 
 
         System.out.println(selectedProduct.getId_P());
@@ -93,12 +104,12 @@ public class ProductSearchController implements Initializable {
 //        editQuantity_Field.setText(String.format("%d", selectedProduct.getQuantity_P()));
 
 
-        imagePro_Field.setText(selectedProduct.getImage_P());
+        imagePro_Text.setText(selectedProduct.getImage_P());
 //        imageView.setImage(new Image(getClass().getResource(selectedProduct.getImage_P()).toExternalForm()));
         DatabaseConnection connectionNow = new DatabaseConnection();
         Connection connectionDB = connectionNow.getConnection();
 
-        String connectQuery = "SELECT * FROM microchip.product";
+        String connectQuery = "SELECT * FROM microchipapp.product";
 
         try {
             Statement statement = connectionDB.createStatement();
@@ -123,18 +134,18 @@ public class ProductSearchController implements Initializable {
         Connection connectionDB = connectNow.getConnection();
 
         //SQL Query - Executed in the backed database
-        String productViewQuery = "SELECT * FROM microchip.product";
+        String productViewQuery = "SELECT * FROM microchipapp.product";
 
         try {
             Statement statement = connectionDB.createStatement();
             ResultSet queryOutput = statement.executeQuery(productViewQuery);
 
             while (queryOutput.next()) {
-                String queryID = queryOutput.getString("id_p");
-                String queryImage = queryOutput.getString("image_p");
-                String queryName = queryOutput.getString("name_p");
-                float queryPrice = queryOutput.getFloat("price_p");
-                int queryQuantity = queryOutput.getInt("quantity_p");
+                String queryID = queryOutput.getString("id_P");
+                String queryImage = queryOutput.getString("image_P");
+                String queryName = queryOutput.getString("name_P");
+                float queryPrice = queryOutput.getFloat("price_P");
+                int queryQuantity = queryOutput.getInt("all_quantity_P");
 
                 // Populate the ObservableList
                 productObservableList.add(new Product(queryID, queryName, queryPrice, queryQuantity, queryImage));
@@ -234,7 +245,7 @@ public class ProductSearchController implements Initializable {
                     String idProduct = selectedProduct.getId_P();
                     int n = Integer.parseInt(editQuantity_Field.getText()) + Integer.parseInt(quantityPro_Field.getText());
                     String i = String.valueOf(n);
-                    String updateField = "UPDATE microchip.product SET quantity_P = + '" + i + "' WHERE id_P = '" + idProduct + "'";
+                    String updateField = "UPDATE microchipapp.product SET all_quantity_P = + '" + i + "' WHERE id_P = '" + idProduct + "'";
                     try {
                         Statement statement = connectDB.createStatement();
                         statement.executeUpdate(updateField);
@@ -268,13 +279,12 @@ public class ProductSearchController implements Initializable {
         else {
             if(productDetail.isInt(editQuantity_Field.getText())) {
                 if (Integer.parseInt(editQuantity_Field.getText()) >= 0 ) {
-                    String updateField = "UPDATE microchip.product SET quantity_P = + '" + editQuantity + "' WHERE id_P = '" + idProduct + "'";
+                    String updateField = "UPDATE microchipapp.product SET all_quantity_P = + '" + editQuantity + "' WHERE id_P = '" + idProduct + "'";
                     try {
                         Statement statement = connectDB.createStatement();
                         statement.executeUpdate(updateField);
                         clearSelectedProduct();
                         updateTable();
-
                     } catch (Exception e) {
                         e.printStackTrace();
                         e.getCause();
@@ -295,16 +305,105 @@ public class ProductSearchController implements Initializable {
 
     }
 
+
+
+    public void addProductOnAction(ActionEvent event) throws IOException {
+        if (idPro_Field.getText().isEmpty() || namePro_Field.getText().isEmpty()
+                || productDetail.getImage_P() == null  || pricePro_Field.getText().isEmpty() || quantityPro_Field.getText().isEmpty()) {
+            warning.setText("Please fill in the Information.");
+        }
+        else {
+            if(productDetail.checkProduct(idPro_Field.getText(), namePro_Field.getText(),imagePro_Text.getText())) {
+                warning.setText("This information is already taken!.");
+            }
+            else {
+                    if (productDetail.isInt(quantityPro_Field.getText()) && productDetail.isFloat(pricePro_Field.getText())) {
+                        if (Integer.parseInt(quantityPro_Field.getText()) >= 0 && Float.parseFloat(pricePro_Field.getText()) > 0) {
+//                    System.out.println(Float.parseFloat(pricePro_Field.getText())+1);
+//                    System.out.println(Integer.parseInt(quantityPro_Field.getText())+2);
+
+//                    System.out.println("asfasf");
+                            productDetail.addProduct(idPro_Field.getText(), namePro_Field.getText(), Float.parseFloat(pricePro_Field.getText()),
+                                    productDetail.getImage_P(), Integer.parseInt(quantityPro_Field.getText()));
+
+                            Button b = (Button) event.getSource();
+                            Stage stage = (Stage) b.getScene().getWindow();
+
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("product-view.fxml"));
+                            stage.setScene(new Scene(loader.load(), 1080, 600));
+                            stage.setTitle("MicrochipStarApp!");
+                            stage.show();
+                        }
+                        else {
+                            warning.setText("Please enter correct information.");
+                        }
+                    }
+                    else {
+                        warning.setText("Please enter correct information.");
+                }
+        }
+        }
+
+
+
+
+
+    }
+
+    @FXML public void handleUploadButtonOnAction(ActionEvent event){
+        FileChooser chooser = new FileChooser();
+        // SET FILECHOOSER INITIAL DIRECTORY
+        chooser.setInitialDirectory(new File(System.getProperty("user.dir")));
+        System.out.println(chooser);
+        // DEFINE ACCEPTABLE FILE EXTENSION
+        chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("images PNG JPG", "*.png", "*.jpg", "*.jpeg"));
+        // GET FILE FROM FILECHOOSER WITH JAVAFX COMPONENT WINDOW
+        Node source = (Node) event.getSource();
+        File file = chooser.showOpenDialog(source.getScene().getWindow());
+        if (file != null){
+            try {
+                // CREATE FOLDER IF NOT EXIST
+                File productDir = new File("image");
+                System.out.println(productDir);
+                if (!productDir.exists()) productDir.mkdirs();
+                // RENAME FILE
+                String[] fileSplit = file.getName().split("\\.");
+                String filename = LocalDate.now() + "_"+System.currentTimeMillis() + "."
+                        + fileSplit[fileSplit.length - 1];
+                System.out.println(filename);
+                Path target = FileSystems.getDefault().getPath(
+                        productDir.getAbsolutePath()+System.getProperty("file.separator")+filename
+
+                );
+                System.out.println(target);
+                // COPY WITH FLAG REPLACE FILE IF FILE IS EXIST
+                Files.copy(file.toPath(), target, StandardCopyOption.REPLACE_EXISTING );
+                // SET NEW FILE PATH TO IMAGE
+                imageView.setImage(new Image(target.toUri().toString()));
+                productDetail.setImage_P(filename);
+//                productDetail.setImage_P(productDir + "/" + filename);
+//
+//                System.out.println(path);
+//                dataSource.writeData(cardList);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+
     private void clearSelectedProduct() {
         selectedProduct = null;
         idPro_Field.clear();
         namePro_Field.clear();
         pricePro_Field.clear();
         quantityPro_Field.clear();
-        imagePro_Field.clear();
+        imagePro_Text.setText("");
         editQuantity_Field.clear();
         editWarning.setText("");
         warning.setText("");
+        imageView.setVisible(false);
 
 
         editQuantityButton.setDisable(true);
@@ -317,51 +416,6 @@ public class ProductSearchController implements Initializable {
         addProduct_Button.setDisable(false);
 
     }
-
-    public void addProductOnAction(ActionEvent event) throws IOException {
-        if (idPro_Field.getText().isEmpty() || namePro_Field.getText().isEmpty()
-                || imagePro_Field.getText().isEmpty() || pricePro_Field.getText().isEmpty() || quantityPro_Field.getText().isEmpty()) {
-            warning.setText("Please fill in the empty box before proceed.");
-        }
-        else {
-            if(productDetail.checkProduct(idPro_Field.getText(), namePro_Field.getText(),imagePro_Field.getText())) {
-                warning.setText("This information is already taken!.");
-            }
-            else {
-                if(productDetail.isInt(quantityPro_Field.getText()) && productDetail.isFloat(pricePro_Field.getText())) {
-                if (Integer.parseInt(quantityPro_Field.getText()) >= 0 && Float.parseFloat(pricePro_Field.getText()) > 0) {
-//                    System.out.println(Float.parseFloat(pricePro_Field.getText())+1);
-//                    System.out.println(Integer.parseInt(quantityPro_Field.getText())+2);
-
-//                    System.out.println("asfasf");
-                    productDetail.addProduct(idPro_Field.getText(), namePro_Field.getText(), Float.parseFloat(pricePro_Field.getText()),
-                            imagePro_Field.getText(), Integer.parseInt(quantityPro_Field.getText()));
-
-                    Button b = (Button) event.getSource();
-                    Stage stage = (Stage) b.getScene().getWindow();
-
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("product-view.fxml"));
-                    stage.setScene(new Scene(loader.load(), 1080, 600));
-                    stage.setTitle("MicrochipStarApp!");
-                    stage.show();
-                }
-                    else{warning.setText("Please enter correct information.");}
-            }
-
-                else {
-                warning.setText("Please enter correct information.");
-            }
-
-            }
-        }
-
-
-
-
-
-
-    }
-
 
 
     public void nextButtonOnAction(ActionEvent event)throws IOException{
@@ -377,6 +431,4 @@ public class ProductSearchController implements Initializable {
 
 
     }
-
-
 }

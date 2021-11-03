@@ -11,8 +11,9 @@ public class HelloApplication extends Application {
     public static final String CURRENCY = "ID:";
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("market-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1080, 600);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        stage.setResizable(false);
         stage.setTitle("MicrochipStarApp!");
         stage.setScene(scene);
         stage.show();
