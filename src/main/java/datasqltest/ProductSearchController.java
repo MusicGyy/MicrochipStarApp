@@ -1,4 +1,4 @@
-package com.example.sa;
+package datasqltest;
 
 
 import javafx.collections.FXCollections;
@@ -9,14 +9,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,7 +26,6 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Pattern;
 
 public class ProductSearchController implements Initializable {
 
@@ -74,7 +71,7 @@ public class ProductSearchController implements Initializable {
 
 
     }
-
+//onaction textfield//
     private void showSelectedWork(Product product) {
         selectedProduct = product;//getproduct
         inQuantity_Button.setDisable(false);
@@ -83,6 +80,7 @@ public class ProductSearchController implements Initializable {
         clear_Button.setDisable(false);
         editWarning.setText("");
         warning.setText("");
+
 
         System.out.println(selectedProduct.getId_P());
 
@@ -317,6 +315,7 @@ public class ProductSearchController implements Initializable {
     public void clearButtonOnAction(ActionEvent event){
         clearSelectedProduct();
         addProduct_Button.setDisable(false);
+
     }
 
     public void addProductOnAction(ActionEvent event) throws IOException {
@@ -331,10 +330,10 @@ public class ProductSearchController implements Initializable {
             else {
                 if(productDetail.isInt(quantityPro_Field.getText()) && productDetail.isFloat(pricePro_Field.getText())) {
                 if (Integer.parseInt(quantityPro_Field.getText()) >= 0 && Float.parseFloat(pricePro_Field.getText()) > 0) {
-                    System.out.println(Float.parseFloat(pricePro_Field.getText())+1);
-                    System.out.println(Integer.parseInt(quantityPro_Field.getText())+2);
+//                    System.out.println(Float.parseFloat(pricePro_Field.getText())+1);
+//                    System.out.println(Integer.parseInt(quantityPro_Field.getText())+2);
 
-                    System.out.println("asfasf");
+//                    System.out.println("asfasf");
                     productDetail.addProduct(idPro_Field.getText(), namePro_Field.getText(), Float.parseFloat(pricePro_Field.getText()),
                             imagePro_Field.getText(), Integer.parseInt(quantityPro_Field.getText()));
 
@@ -362,5 +361,22 @@ public class ProductSearchController implements Initializable {
 
 
     }
+
+
+
+    public void nextButtonOnAction(ActionEvent event)throws IOException{
+        Button b = (Button) event.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("market-view.fxml"));
+        stage.setScene(new Scene(loader.load(), 1080, 600));
+        stage.setTitle("MicrochipStarApp!");
+        stage.show();
+
+
+
+
+    }
+
 
 }

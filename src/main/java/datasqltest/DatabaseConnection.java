@@ -1,4 +1,4 @@
-package com.example.sa;
+package datasqltest;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

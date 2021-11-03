@@ -1,4 +1,4 @@
-package com.example.sa;
+package datasqltest;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -114,22 +114,22 @@ public class Product {
             ResultSet queryOutPut = statement.executeQuery(connectQuery);
             while (queryOutPut.next()){
                 if (idProduct.equals(queryOutPut.getString("id_P"))){
-                    System.out.println("1");
+//                    System.out.println("1");
                     return true;
                 }
                 if(nameProduct.equals(queryOutPut.getString("name_P"))){
-                    System.out.println("2");
+//                    System.out.println("2");
                     return true;
                 }
                 if (imagePath.equals(queryOutPut.getString("image_P"))){
-                    System.out.println("3");
+//                    System.out.println("3");
                     return true;
                 }
             }
         } catch (Exception e){
             e.printStackTrace();
         }
-        System.out.println("4");
+//        System.out.println("4");
         return false;
     }
 
