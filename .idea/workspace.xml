@@ -7,21 +7,6 @@
     <list default="true" id="51b79892-da0f-4018-a4ca-7eb42c90f476" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/MarketViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/MarketViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/ProductSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/ProductSearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/ProfileModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/ProfileModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/datasqltest/product-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/datasqltest/product-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/DatabaseConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/HelloApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/ItemController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/MarketViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/MarketViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/ProductSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/ProductSearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/ProfileModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/product-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/product-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,6 +151,18 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
