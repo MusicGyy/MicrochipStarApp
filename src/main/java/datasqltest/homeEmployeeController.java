@@ -154,6 +154,8 @@ public class homeEmployeeController implements Initializable {
 
     }
 
+
+
     public void updateTable(){
 
         ObservableList<POModel> poModelObservableList = FXCollections.observableArrayList();
@@ -343,6 +345,17 @@ public class homeEmployeeController implements Initializable {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("homeEmployee.fxml"));
         stage.setScene(new Scene(loader.load(),1080,680));
+
+        stage.show();
+    }
+
+    @FXML
+    public void goPOButton(ActionEvent event) throws IOException{
+        Button b = (Button) event.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("POpage.fxml"));
+        stage.setScene(new Scene(loader.load(),1080,600));
 
         stage.show();
     }

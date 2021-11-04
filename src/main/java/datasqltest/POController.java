@@ -201,7 +201,7 @@ public class POController implements Initializable {
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("market-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("homeEmployee.fxml"));
         stage.setScene(new Scene(loader.load(), 1080, 600));
         stage.setTitle("MicrochipStarApp!");
         stage.show();

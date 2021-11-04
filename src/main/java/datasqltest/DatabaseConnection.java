@@ -11,8 +11,8 @@ public class DatabaseConnection {
 
     public Connection getConnection(){
         String databaseName = "microchipapp";
-        String databaseUser = "";
-        String databasePassword = "";
+        String databaseUser = "root";
+        String databasePassword = "90090080zZ.";
         String url = "jdbc:mysql://localhost/" +databaseName;
 
 
