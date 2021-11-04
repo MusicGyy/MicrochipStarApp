@@ -6,32 +6,44 @@
   <component name="ChangeListManager">
     <list default="true" id="51b79892-da0f-4018-a4ca-7eb42c90f476" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-03_1635937005844.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-03_1635937615274.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-03_1635938231582.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-03_1635938602739.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-03_1635938805321.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-03_1635938864425.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-03_1635939626630.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-03_1635939665368.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-03_1635939685072.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-03_1635939961252.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-03_1635957836806.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-04_1635963768797.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-04_1636014255470.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-04_1636017186601.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-05_1636045675871.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-05_1636045726358.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-05_1636045782072.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-05_1636045871363.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-05_1636051242875.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-05_1636051449766.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/2021-11-05_1636051546739.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/PIC24F04KL100-D2X-Regular.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/medium-ATTINY202-SOIC-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/medium-PIC12F1612-PDIP-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/medium-PIC24FJ64GA702-SSOP-28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/medium-PIC32MM0016GPL020-SSOP-20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/medium-PIC32MM0256GPM064-TQFP-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/medium-PIC32MX110F016B-SOIC-28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/medium-dsPIC33CK32MC102-SSOP-28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/medium-dsPIC33EP32MC202-SSOP-28.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/POController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/POController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/POModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/POModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/ProductSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/ProductSearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/homeEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/homeEmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/loginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/registerEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/registerEmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/datasqltest/POpage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/datasqltest/POpage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/datasqltest/homeEmployee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/datasqltest/homeEmployee.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/datasqltest/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/datasqltest/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/datasqltest/product-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/datasqltest/product-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/datasqltest/registerEmployee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/datasqltest/registerEmployee.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/DatabaseConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/HelloApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/POController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/POController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/POModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/POModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/POpage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/POpage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/ProductSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/ProductSearchController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/homeEmployee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/homeEmployee.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/homeEmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/homeEmployeeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/loginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/product-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/product-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/registerEmployee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/registerEmployee.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/registerEmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/registerEmployeeController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,13 +123,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\KKNKr\Desktop\test\SA\sa\src\main\resources\datasqltest" />
       <recent name="C:\Users\User\Desktop\New folder (5)\2\MicrochipStarApp\src\main\resources\datasqltest" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Desktop\New folder (5)\2\MicrochipStarApp\src\main\resources\datasqltest" />
+      <recent name="C:\Users\KKNKr\Desktop\test\SA\sa\src\main\resources\datasqltest" />
       <recent name="C:\Users\KKNKr\Desktop\test\SA\sa" />
-      <recent name="C:\Users\KKNKr\Desktop\test\SA\sa\src\main\resources\com\example\sa" />
-      <recent name="C:\Users\KKNKr\Desktop\test\SA\sa\src\main\java\com\example\sa" />
+      <recent name="C:\Users\KKNKr\Desktop\test\SA\sa\src\main\java\datasqltest" />
+      <recent name="C:\Users\KKNKr\Desktop\test\SA\sa\src\main\resources" />
+      <recent name="C:\Users\User\Desktop\New folder (5)\2\MicrochipStarApp\src\main\resources\datasqltest" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.sa" />

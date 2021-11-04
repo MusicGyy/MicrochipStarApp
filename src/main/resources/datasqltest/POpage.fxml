@@ -89,7 +89,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="1000.0" layoutY="20.0" mnemonicParsing="false" onAction="#nextButtonOnAction" text="back" />
+      <Button fx:id="backButton" layoutX="989.0" layoutY="20.0" mnemonicParsing="false" onAction="#nextButtonOnAction" text="ย้อนกลับ" />
       <Label layoutX="506.0" layoutY="250.0" text="ชื่อสินค้า :">
          <font>
             <Font size="18.0" />

@@ -65,7 +65,7 @@
             <Image url="@LogoMicrochip_-_Copy-removebg-preview.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fff5db" height="242.0" layoutX="14.0" layoutY="363.0" stroke="#a37700" strokeType="INSIDE" width="1041.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fff5db" height="228.0" layoutX="14.0" layoutY="363.0" stroke="#a37700" strokeType="INSIDE" width="1041.0" />
         <Label layoutX="44.0" layoutY="107.0" text="รายการสั่งซื้อ" textFill="#89620c">
             <font>
                 <Font name="System Bold" size="34.0" />
@@ -76,12 +76,11 @@
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label fx:id="addressTest" layoutX="133.0" layoutY="491.0" prefHeight="45.0" prefWidth="886.0" text="...">
+        <Label fx:id="addressTest" layoutX="353.0" layoutY="461.0" prefHeight="126.0" prefWidth="685.0" text="...">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="184.0" layoutY="492.0" />
         <TextField fx:id="serach" layoutX="825.0" layoutY="114.0" prefHeight="31.0" prefWidth="200.0" />
         <Label layoutX="768.0" layoutY="119.0" text="Serach">
          <font>
@@ -100,7 +99,6 @@
                 <TableColumn fx:id="status" prefWidth="97.0" text="สถานะ" />
             </columns>
         </TableView>
-        <Label fx:id="error" layoutX="268.0" layoutY="557.0" textFill="RED" />
         <ChoiceBox fx:id="choiceBoxState" layoutX="31.0" layoutY="553.0" prefWidth="150.0" />
         <Button fx:id="confirmState" layoutX="189.0" layoutY="553.0" mnemonicParsing="false" text="ยืนยัน" />
         <Label layoutX="34.0" layoutY="370.0" prefHeight="45.0" prefWidth="99.0" text="Name :">
@@ -118,7 +116,7 @@
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="37.0" layoutY="500.0" text="Address :">
+        <Label layoutX="177.0" layoutY="500.0" text="Address :">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -143,6 +141,7 @@
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
+        <Label fx:id="error" layoutX="35.0" layoutY="526.0" prefHeight="21.0" prefWidth="308.0" textFill="RED" />
         <ToolBar layoutX="450.0" layoutY="32.0" prefHeight="45.0" prefWidth="613.0">
             <items>
                 <Button mnemonicParsing="false" onAction="#goPOButton" prefWidth="93.0" text="ใบ PO" />

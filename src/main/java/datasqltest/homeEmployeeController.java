@@ -249,22 +249,22 @@ public class homeEmployeeController implements Initializable {
             //        {"ยืนยันการสั่งซื้อ","กำลังผลิต", "กำลังจัดส่ง","ส่งสินค้าแล้ว"}
         if (statusText.equals("ยืนยันการสั่งซื้อ")){
             if (status.equals("กำลังจัดส่ง") || status.equals("ส่งสินค้าแล้ว")){
-                error.setText("ไม่สามารถเปลี่ยน");
-                System.out.println("1");
+                error.setText("สถานนะไม่ถูกต้อง");
+//                System.out.println("1");
             }else {
                 ///  กำลังผลิต   ///
-                System.out.println("2");
+//                System.out.println("2");
                 poModel.changeStatus(id,status,statusText);
                 updateTable();
             }
         }
         else if (statusText.equals("กำลังจัดส่ง")){
             if (status.equals("กำลังผลิต")){
-                System.out.println("3");
-                error.setText("ไม่สามารถเปลี่ยน");
+//                System.out.println("3");
+                error.setText("สถานนะไม่ถูกต้อง");
             }else {
                 ///ส่งสินค้าแล้ว///
-                System.out.println("4");
+//                System.out.println("4");
                 poModel.changeStatus(id,status,statusText);
                 updateTable();
             }
@@ -272,29 +272,21 @@ public class homeEmployeeController implements Initializable {
 //        else if (statusText.equals("ยังไม่ชำระสินค้า")){
 //            error.setText("ไม่สามารถเปลี่ยนได้");
 //        }
-        else {
+        else if(statusText.equals("กำลังผลิต")){
+
+            if (status.equals("ส่งสินค้าแล้ว")){
+                error.setText("สถานนะไม่ถูกต้อง");
+            }
+            else{
+                //กำลังจัดส่ง///
+//            System.out.println("5");
+                poModel.changeStatus(id,status,statusText);
+                updateTable();
+            }
 
 
-
-            //กำลังจัดส่ง///
-            System.out.println("5");
-            updateTable();
-            poModel.changeStatus(id,status,statusText);
         }
-
-
-
         }
-
-//        POTable.getColumns().clear();
-//        clearSelectedProduct();
-
-
-//        System.out.println(status);
-
-
-
-
 //    @FXML
 //    public void refreshButtonOnAction(ActionEvent event) throws IOException {
 //        Button b = (Button) event.getSource();
@@ -305,7 +297,6 @@ public class homeEmployeeController implements Initializable {
 //
 //        stage.show();
 //    }
-
     @FXML
     public void goPOButton(ActionEvent event) throws IOException{
         Button b = (Button) event.getSource();
@@ -346,7 +337,6 @@ public class homeEmployeeController implements Initializable {
             e.getCause();
         }
     }
-
     public void logOutButtonOnAction(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
