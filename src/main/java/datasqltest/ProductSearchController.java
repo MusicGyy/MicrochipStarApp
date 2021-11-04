@@ -274,7 +274,7 @@ public class ProductSearchController implements Initializable {
         String idProduct = selectedProduct.getId_P();
         String editQuantity = editQuantity_Field.getText();
         if (editQuantity_Field.getText().isEmpty()) {
-            editWarning.setText("Please fill in the empty box before proceed.");
+            editWarning.setText("Please fill in the Information.");
         }
         else {
             if(productDetail.isInt(editQuantity_Field.getText())) {
@@ -417,12 +417,11 @@ public class ProductSearchController implements Initializable {
 
     }
 
-
     public void nextButtonOnAction(ActionEvent event)throws IOException{
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("market-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("homeEmployee.fxml"));
         stage.setScene(new Scene(loader.load(), 1080, 600));
         stage.setTitle("MicrochipStarApp!");
         stage.show();
@@ -431,4 +430,5 @@ public class ProductSearchController implements Initializable {
 
 
     }
+
 }

@@ -65,7 +65,7 @@
 <!--                        </ImageView>-->
                      </children>
                   </VBox>
-                  <Button mnemonicParsing="false" onAction="#nextButtonOnAction" prefHeight="75.0" prefWidth="272.0" text="back" />
+                  <Button mnemonicParsing="false" onAction="#nextButtonOnAction" prefHeight="75.0" prefWidth="272.0" text="Buy Now" />
                </children>
             </VBox>
          </left>

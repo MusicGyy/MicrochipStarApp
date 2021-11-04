@@ -234,7 +234,7 @@ public class MarketViewController implements Initializable {
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("product-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("POpage.fxml"));
         stage.setScene(new Scene(loader.load(), 1080, 600));
         stage.setTitle("MicrochipStarApp!");
         stage.show();

@@ -1,5 +1,7 @@
 package datasqltest;
 
+import datasqltest.DatabaseConnection;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;

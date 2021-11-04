@@ -97,7 +97,7 @@ public class homeEmployeeController {
 
                 poModelObservableList.add(new POModel(queryPOID,queryPOName,queryPOPhone,queryPOEmail,queryPOAddress,queryPOPN,queryPOQuantity,queryPOTP,queryPOEvidence,queryPODate,queryPOStatus));
 //                    userObservableList.add(new user(queryPOName,queryPOPhone,queryPOAddress));
-                System.out.println(queryOutPut.getString("status_PO"));
+//                System.out.println(queryOutPut.getString("status_PO"));
 
 //                }
 

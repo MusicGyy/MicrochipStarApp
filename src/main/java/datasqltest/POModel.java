@@ -1,6 +1,10 @@
 package datasqltest;
 
+import datasqltest.DatabaseConnection;
+import javafx.event.ActionEvent;
+
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class POModel {
@@ -162,5 +166,101 @@ public class POModel {
             e.getCause();
         }
     }
+
+
+    public void update(int priceDB,int quantity_PO,String pn) {
+        DatabaseConnection connectionNow2 = new DatabaseConnection();
+        Connection connectDB2 = connectionNow2.getConnection();
+        int result = priceDB - quantity_PO;
+//                        int result = quantityDB - poModel.getQuantity_PO();
+//        String resultStr = String.valueOf(result);
+//                        String updateField = "UPDATE microchipapp.product SET all_quantity_P = + '" + resultStr + "' WHERE id_P = '" + poModel.getPn_PO() + "'";
+        String updateField = "UPDATE microchipapp.product SET all_quantity_P = + '" + result + "' WHERE id_P = '" + pn + "'";
+//        String updateField = "UPDATE microchipapp.product SET all_quantity_P = + '" + editQuantity + "' WHERE id_P = '" + idProduct + "'";
+
+        try {
+            System.out.println("1");
+            Statement statement2 = connectDB2.createStatement();
+            statement2.executeUpdate(updateField);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+
+//    public void editQuantityButtonOnAction(ActionEvent event){
+//        DatabaseConnection connectionNow = new DatabaseConnection();
+//        Connection connectDB = connectionNow.getConnection();
+//
+//        String idProduct = selectedProduct.getId_P();
+//        String editQuantity = editQuantity_Field.getText();
+//        if (editQuantity_Field.getText().isEmpty()) {
+//            editWarning.setText("Please fill in the Information.");
+//        }
+//        else {
+//            if(productDetail.isInt(editQuantity_Field.getText())) {
+//                if (Integer.parseInt(editQuantity_Field.getText()) >= 0 ) {
+//                    String updateField = "UPDATE microchipapp.product SET all_quantity_P = + '" + editQuantity + "' WHERE id_P = '" + idProduct + "'";
+//                    try {
+//                        Statement statement = connectDB.createStatement();
+//                        statement.executeUpdate(updateField);
+//                        clearSelectedProduct();
+//                        updateTable();
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                        e.getCause();
+//                    }
+//                }
+//                else{editWarning.setText("Please enter correct information.");}
+//            }else {editWarning.setText("Please enter the numbers.");
+//            }
+//     }
+
+//    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public boolean checkProduct(int quantity_PO ){
+        DatabaseConnection connectionNow = new DatabaseConnection();
+        Connection connectionDB = connectionNow.getConnection();
+        String connectQuery = "SELECT * FROM microchipapp.product";
+
+        try {
+            Statement statement = connectionDB.createStatement();
+            ResultSet queryOutPut = statement.executeQuery(connectQuery);
+            while (queryOutPut.next()){
+                if (quantity_PO<Integer.parseInt(queryOutPut.getString("all_quantity_P"))){
+                    System.out.println("1");
+                    return true;
+                }
+                else {
+                    System.out.println("2");
+                    return false;
+                }
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        System.out.println("4");
+        return false;
+    }
+
+
+
 
 }
