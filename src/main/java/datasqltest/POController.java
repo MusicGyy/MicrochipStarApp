@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -33,7 +34,7 @@ import java.util.logging.Logger;
 
 public class POController implements Initializable {
     @FXML
-    private Label total_price_text,quantityText,nameText,evidenceTexT,error,summaryShowNameLabel,summaryShowPhoneLabel,summaryShowMailLabel,summaryShowAddressLabel;
+    private Label total_price_text,quantityText,nameText,evidenceTexT,error,summaryShowNameLabel,summaryShowPhoneLabel,summaryShowMailLabel;
 
     @FXML
     private Button backButton,addProductButton,cancelButton,list_summary_Button,evidenceButton,confirmButton,summaryB;
@@ -56,47 +57,35 @@ public class POController implements Initializable {
 
     private Product product;
 
+    @FXML
+    private Text summaryShowAddressText;
+
 
     public void initialize(URL url, ResourceBundle resourceBundle){
         poModel = new POModel();
         confirmButton.setDisable(true);
         evidenceButton.setDisable(true);
-
+        confirmButton.setDisable(true);
+        evidenceButton.setDisable(true);
         poModel.setEvidence_PO("");
-//        pos = new PO();
-//        ChoiceProductName.getItems().addAll(product);
-//        ChoiceProductName.setValue("-----เลือกสินค้า-----");
-//        confirmState.setOnAction(e -> getChoice(choiceBoxState));
-
-        //        setStatus();
-
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-//        String productViewQuery = "SELECT * FROM microchipapp.po";
         String productViewQuery2 = "SELECT * FROM microchipapp.product";
 
         try {
 
-//            Statement statement = connectDB.createStatement();
-//            ResultSet queryOutPut = statement.executeQuery(productViewQuery);
+
 
             Statement statement2 = connectDB.createStatement();
             ResultSet queryOutPut2 = statement2.executeQuery(productViewQuery2);
 
 
-//            Statement statementUser = connectDB.createStatement();
-//            ResultSet queryOutPutUser = statementUser.executeQuery(userViewQuery);
 
             while (queryOutPut2.next()){
                 ChoiceProductName.getItems().addAll(queryOutPut2.getString("name_P"));
                 ChoiceProductName.setOnAction(this::getProductName);
             }
-
-//            while (queryOutPut.next()){
-//                System.out.println(queryOutPut.getString("name_PO"));
-//
-//            }
 
 
         }catch (SQLException e){
@@ -104,24 +93,24 @@ public class POController implements Initializable {
             e.printStackTrace();
         }
 
+//        pageUpdate();
 
+    }
+    private void pageUpdate(){
+//        poModel = new POModel();
+//        confirmButton.setDisable(true);
+//        evidenceButton.setDisable(true);
 
+        poModel.setEvidence_PO("");
 
     }
 
-//    private void updateDetail(){
-//
-//
-//
-//
-//
-//
-//
-//    }
-
-
     private void clearDetail(){
-        ChoiceProductName.setValue("");
+
+        poModel = new POModel();
+        confirmButton.setDisable(true);
+        evidenceButton.setDisable(true);
+//        ChoiceProductName.setOnActio;
         quantity.clear();
         name.clear();
         phone.clear();
@@ -131,18 +120,26 @@ public class POController implements Initializable {
         quantityText.setText("");
         nameText.setText("");
         error.setText("");
+        poModel.setEvidence_PO("");
+
         summaryShowNameLabel.setText("");
         summaryShowPhoneLabel.setText("");
         summaryShowMailLabel.setText("");
-        summaryShowAddressLabel.setText("");
+        summaryShowAddressText.setText("");
         productView.setVisible(false);
-        evidenceView.setDisable(false);
+        evidenceView.setVisible(false);
+        evidenceButton.setDisable(true);
+        ChoiceProductName.setDisable(false);
+//        pageUpdate();
     }
 
     public void getProductName(ActionEvent event){
         product = new Product();
         String productName = ChoiceProductName.getValue();
         poModel.setPn_PO(productName);
+        productView.setVisible(true);
+        evidenceView.setVisible(false);
+        error.setText("");
 
 //        total_price_text.setText(quantity.getText());
 //        System.out.println(quantity.getText());
@@ -156,37 +153,11 @@ public class POController implements Initializable {
             Statement statement = connectionDB.createStatement();
             ResultSet queryOutPut = statement.executeQuery(connectQuery);
             while (queryOutPut.next()){
-//                 File brandingFile = new File("image/"+product.getImage_P());
-//                 Image brandingImage = new Image(brandingFile.toURI().toString());
-//                 productView.setImage(brandingImage);
-
-
-                File brandingFile = new File("image/"+queryOutPut.getString("image_P"));
+           File brandingFile = new File("image/"+queryOutPut.getString("image_P"));
                 Image brandingImage = new Image(brandingFile.toURI().toString());
                 productView.setImage(brandingImage);
 
 
-
-//                nameText.setText(queryOutPut.getString(""));
-
-
-//                if (isNumeric(quantity.getText())){
-//                    float price = Float.parseFloat(quantity.getText());
-//                    float priceDB = Float.parseFloat(queryOutPut.getString("price_P"));
-//                    float tp = price * priceDB;
-//                    tps = tp;
-//                    poModel.setTotal_price_PO(tp);
-//                    total_price_text.setText(String.valueOf(tp));
-//                }else {
-//                    total_price_text.setText("...");
-//                }
-
-
-
-//                float price = Float.parseFloat(quantity.getText());
-//                float priceDB = Float.parseFloat(queryOutPut.getString("price_P"));
-//                float tp = price * priceDB;
-//                total_price_text.setText(String.valueOf(tp));
             }
         } catch (Exception e){
             e.printStackTrace();
@@ -195,6 +166,8 @@ public class POController implements Initializable {
 
     @FXML public void cancelButtonOnAction(ActionEvent event){
         clearDetail();
+        error.setText("ยกเลิกการสั่งซื้อ");
+
     }
 
     public void nextButtonOnAction(ActionEvent event)throws IOException{
@@ -211,21 +184,6 @@ public class POController implements Initializable {
 
     }
 
-//    Connection connectionDB = connectionNow.getConnection();
-//
-//    String connectQuery = "SELECT * FROM microchipapp.product";
-//
-//        try {
-//        Statement statement = connectionDB.createStatement();
-//        ResultSet queryOutPut = statement.executeQuery(connectQuery);
-//        while (queryOutPut.next()){
-//            File brandingFile = new File("image/"+selectedProduct.getImage_P());
-//            Image brandingImage = new Image(brandingFile.toURI().toString());
-//            imageView.setImage(brandingImage);
-//        }
-//    } catch (Exception e){
-//        e.printStackTrace();
-//    }
 
     public static boolean isNumeric(String str) {
         return str != null && str.matches("[-+]?\\d*\\.?\\d+");
@@ -238,11 +196,11 @@ public class POController implements Initializable {
         if (name.getText().isEmpty() || phone.getText().isEmpty() || email.getText().isEmpty() || address.getText().isEmpty()
                  ||poModel.getPn_PO()==null|| poModel.getEvidence_PO().isEmpty()){
 //            || poModel.getEvidence_PO().isEmpty()
-            error.setText("Please fill in the Information.");
+            error.setText("กรุณากรอกข้อมูลให้ครบ");
         }else if (!isNumeric(quantity.getText())){
-            error.setText("Please enter correct information.");
+            error.setText("กรุณากรอกข้อมูลให้ถูกต้อง");
         }else {
-            if (poModel.checkProduct(Integer.parseInt(quantity.getText()))){
+            if (poModel.checkProduct(Integer.parseInt(quantity.getText()),poModel.getPn_PO())){
 //            ChoiceProductName.setItems(;);
 //            String productName = ChoiceProductName.getValue();
 //            int price = Integer.parseInt(quantity.getText());
@@ -281,16 +239,17 @@ public class POController implements Initializable {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-
-            Button b = (Button) event.getSource();
-            Stage stage = (Stage) b.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("POpage.fxml"));
-            stage.setScene(new Scene(loader.load(), 1080, 600));
-            stage.setTitle("MicrochipStarApp!");
-            stage.show();
+                clearDetail();
+                error.setText("ยืนยันการส่งซื้อ");
+//            Button b = (Button) event.getSource();
+//            Stage stage = (Stage) b.getScene().getWindow();
+//            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("POpage.fxml"));
+//            stage.setScene(new Scene(loader.load(), 1080, 600));
+//            stage.setTitle("MicrochipStarApp!");
+//            stage.show();
 
         }else {
-                error.setText("Stock is not enough.");
+                error.setText("สินค้าไม่พอ");
 
             }
         }
@@ -303,6 +262,7 @@ public class POController implements Initializable {
 
 
     @FXML public void handleUploadButton(ActionEvent event){
+
         FileChooser chooser = new FileChooser();
         // SET FILECHOOSER INITIAL DIRECTORY
         chooser.setInitialDirectory(new File(System.getProperty("user.dir")));
@@ -334,6 +294,10 @@ public class POController implements Initializable {
                 evidenceView.setImage(new Image(target.toUri().toString()));
                 poModel.setEvidence_PO(destDir + "/" + filename);
                 confirmButton.setDisable(false);
+                productView.setVisible(false);
+                evidenceView.setVisible(true);
+                ChoiceProductName.setDisable(true);
+
 
 
 
@@ -349,14 +313,15 @@ public class POController implements Initializable {
     private boolean setDetail() {
         if (name.getText().isEmpty() || phone.getText().isEmpty() || email.getText().isEmpty() || address.getText().isEmpty()
                 ||quantity.getText().equals("")||poModel.getPn_PO()==null) {
-            error.setText("Please fill in the Information.");
+            error.setText("กรุณากรอกข้อมูลให้ครบ");
             return false;
         } else if (!isNumeric(quantity.getText())) {
-            error.setText("Please enter correct information.");
+            error.setText("กรุณากรอกข้อมูลให้ถูกต้อง");
             return false;
         } else {
+            if (poModel.checkProduct(Integer.parseInt(quantity.getText()),poModel.getPn_PO())){
             nameText.setText(poModel.getPn_PO());
-            summaryShowAddressLabel.setText(address.getText());
+            summaryShowAddressText.setText(address.getText());
             summaryShowMailLabel.setText(email.getText());
             summaryShowNameLabel.setText(name.getText());
             summaryShowPhoneLabel.setText(phone.getText());
@@ -395,6 +360,9 @@ public class POController implements Initializable {
                 e.printStackTrace();
                 return false;
             }
+            }else {
+                error.setText("สินค้าไม่พอ");
+            }
 return false;
         }
     }
@@ -403,6 +371,7 @@ return false;
 
                     if(setDetail()){
                         evidenceButton.setDisable(false);
+                        error.setText("");
 
                     }
                     else {
@@ -410,10 +379,6 @@ return false;
                     }
 
         }
-
-
-
-
 
 
 

@@ -8,46 +8,43 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="datasqltest.registerEmployeeController">
+<AnchorPane prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="datasqltest.registerEmployeeController">
     <children>
-      <ImageView fitHeight="600.0" fitWidth="800.0">
-         <image>
-            <Image url="@logo.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="131.0" fitWidth="149.0" layoutY="1.0">
          <image>
             <Image url="@LogoMicrochip_-_Copy-removebg-preview.png" />
          </image>
       </ImageView>
-        <Label layoutX="540.0" layoutY="67.0" text="Register Employee">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="483.0" layoutX="103.0" layoutY="84.0" stroke="BLACK" strokeType="INSIDE" width="445.0" />
+        <Label layoutX="111.0" layoutY="93.0" prefHeight="45.0" prefWidth="255.0" text="Register Employee">
             <font>
                 <Font size="30.0" />
             </font>
         </Label>
-        <TextField fx:id="name" layoutX="307.0" layoutY="159.0" promptText="name">
+        <TextField fx:id="name" layoutX="232.0" layoutY="175.0" promptText="name">
          <effect>
-            <DropShadow color="RED" />
+            <DropShadow color="#e4cccc" />
          </effect></TextField>
-        <TextField fx:id="username" layoutX="307.0" layoutY="228.0" promptText="username">
+        <TextField fx:id="username" layoutX="232.0" layoutY="244.0" promptText="username">
          <effect>
-            <DropShadow color="RED" />
+            <DropShadow color="#e4cccc" />
          </effect></TextField>
-        <PasswordField fx:id="password" layoutX="307.0" layoutY="300.0" promptText="password">
+        <PasswordField fx:id="password" layoutX="232.0" layoutY="316.0" promptText="password">
          <effect>
-            <DropShadow color="RED" />
+            <DropShadow color="#e4cccc" />
          </effect></PasswordField>
-        <PasswordField fx:id="ConfirmPassword" layoutX="307.0" layoutY="367.0" promptText="Confirm Password">
+        <PasswordField fx:id="ConfirmPassword" layoutX="232.0" layoutY="383.0" promptText="Confirm Password">
          <effect>
-            <DropShadow color="RED" />
+            <DropShadow color="#e4cccc" />
          </effect></PasswordField>
-        <Button fx:id="registerButton" layoutX="354.0" layoutY="484.0" mnemonicParsing="false" onAction="#registerButtonOnAction" text="Register">
+        <Button fx:id="registerButton" layoutX="249.0" layoutY="450.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="31.0" prefWidth="132.0" style="-fx-background-color: f0c14b;" text="บันทึก">
          <effect>
-            <DropShadow color="RED" />
+            <DropShadow color="#e4cccc" />
          </effect></Button>
-        <Button fx:id="closeButton" layoutX="732.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeButtonAction" text="close" />
-        <Label fx:id="error" layoutX="373.0" layoutY="398.0" />
+        <Button fx:id="closeButton" layoutX="598.0" layoutY="21.0" mnemonicParsing="false" onAction="#closeButtonAction" text="ปิด" />
+        <Label fx:id="error" layoutX="232.0" layoutY="503.0" prefHeight="21.0" prefWidth="167.0" textAlignment="CENTER" textFill="RED" />
     </children>
 </AnchorPane>

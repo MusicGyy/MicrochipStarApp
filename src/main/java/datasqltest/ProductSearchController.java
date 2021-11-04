@@ -59,12 +59,12 @@ public class ProductSearchController implements Initializable {
     private Label warning,editWarning;
     @FXML
     private TextField idPro_Field, namePro_Field, pricePro_Field, quantityPro_Field,imagePro_Field;
-    @FXML
-    private Text imagePro_Text;
+//    @FXML
+//    private Text imagePro_Text;
     @FXML
     private Button inQuantity_Button, addProduct_Button, editQuantityButton;
     @FXML
-    private Button clear_Button;
+    private Button clear_Button,handleUpload;
 
     @FXML
     private ImageView imageView;
@@ -78,6 +78,7 @@ public class ProductSearchController implements Initializable {
         clear_Button.setDisable(true);
 //        addProduct_Button.setDisable(true);
         updateTable();
+        handleUpload.setDisable(false);
 
 
     }
@@ -104,7 +105,7 @@ public class ProductSearchController implements Initializable {
 //        editQuantity_Field.setText(String.format("%d", selectedProduct.getQuantity_P()));
 
 
-        imagePro_Text.setText(selectedProduct.getImage_P());
+//        imagePro_Text.setText(selectedProduct.getImage_P());
 //        imageView.setImage(new Image(getClass().getResource(selectedProduct.getImage_P()).toExternalForm()));
         DatabaseConnection connectionNow = new DatabaseConnection();
         Connection connectionDB = connectionNow.getConnection();
@@ -128,6 +129,7 @@ public class ProductSearchController implements Initializable {
     }
 
     public void updateTable(){
+        handleUpload.setDisable(true);
         ObservableList<Product> productObservableList = FXCollections.observableArrayList();
         productDetail = new Product();
         DatabaseConnection connectNow = new DatabaseConnection();
@@ -238,7 +240,7 @@ public class ProductSearchController implements Initializable {
         DatabaseConnection connectionNow = new DatabaseConnection();
         Connection connectDB = connectionNow.getConnection();
         if (editQuantity_Field.getText().isEmpty()) {
-            editWarning.setText("Please fill in the empty box before proceed.");
+            editWarning.setText("กรุณากรอกข้อมูลในช่องว่าง");
         } else {
             if(productDetail.isInt(editQuantity_Field.getText())) {
                 if (Integer.parseInt(editQuantity_Field.getText()) > 0 ) {
@@ -256,8 +258,8 @@ public class ProductSearchController implements Initializable {
                         e.getCause();
                     }
                 }
-                else{editWarning.setText("Please enter correct information.");}
-            }else {editWarning.setText("Please enter the numbers.");
+                else{editWarning.setText("กรุณากรอกข้อมูลให้ถูกต้อง");}
+            }else {editWarning.setText("กรุณากรอกตัวเลขให้ถูกต้อง");
             }
         }
 
@@ -274,7 +276,7 @@ public class ProductSearchController implements Initializable {
         String idProduct = selectedProduct.getId_P();
         String editQuantity = editQuantity_Field.getText();
         if (editQuantity_Field.getText().isEmpty()) {
-            editWarning.setText("Please fill in the Information.");
+            editWarning.setText("กรุณากรอกข้อมูลในช่องว่าง");
         }
         else {
             if(productDetail.isInt(editQuantity_Field.getText())) {
@@ -290,16 +292,10 @@ public class ProductSearchController implements Initializable {
                         e.getCause();
                     }
                 }
-                else{editWarning.setText("Please enter correct information.");}
-            }else {editWarning.setText("Please enter the numbers.");
+                else{editWarning.setText("กรุณากรอกข้อมูลให้ถูกต้อง");}
+            }else {editWarning.setText("กรุณากรอกตัวเลขให้ถูกต้อง");
             }
         }
-
-
-
-
-
-
 
 
 
@@ -310,11 +306,11 @@ public class ProductSearchController implements Initializable {
     public void addProductOnAction(ActionEvent event) throws IOException {
         if (idPro_Field.getText().isEmpty() || namePro_Field.getText().isEmpty()
                 || productDetail.getImage_P() == null  || pricePro_Field.getText().isEmpty() || quantityPro_Field.getText().isEmpty()) {
-            warning.setText("Please fill in the Information.");
+            warning.setText("กรุณากรอกข้อมูลให้ครบ");
         }
         else {
-            if(productDetail.checkProduct(idPro_Field.getText(), namePro_Field.getText(),imagePro_Text.getText())) {
-                warning.setText("This information is already taken!.");
+            if(productDetail.checkProduct(idPro_Field.getText(), namePro_Field.getText(),productDetail.getImage_P())) {
+                warning.setText("ข้อมูลนี้ถูกนำไปใช้แล้ว!");
             }
             else {
                     if (productDetail.isInt(quantityPro_Field.getText()) && productDetail.isFloat(pricePro_Field.getText())) {
@@ -330,16 +326,16 @@ public class ProductSearchController implements Initializable {
                             Stage stage = (Stage) b.getScene().getWindow();
 
                             FXMLLoader loader = new FXMLLoader(getClass().getResource("product-view.fxml"));
-                            stage.setScene(new Scene(loader.load(), 1080, 600));
+                            stage.setScene(new Scene(loader.load(), 1080, 680));
                             stage.setTitle("MicrochipStarApp!");
                             stage.show();
                         }
                         else {
-                            warning.setText("Please enter correct information.");
+                            warning.setText("กรุณากรอกข้อมูลให้ถูกต้อง");
                         }
                     }
                     else {
-                        warning.setText("Please enter correct information.");
+                        warning.setText("กรุณากรอกข้อมูลให้ถูกต้อง");
                 }
         }
         }
@@ -394,18 +390,19 @@ public class ProductSearchController implements Initializable {
 
 
     private void clearSelectedProduct() {
+        Product productDetail = new Product();
         selectedProduct = null;
         idPro_Field.clear();
         namePro_Field.clear();
         pricePro_Field.clear();
         quantityPro_Field.clear();
-        imagePro_Text.setText("");
+//        imagePro_Text.setText("");
         editQuantity_Field.clear();
         editWarning.setText("");
         warning.setText("");
         imageView.setVisible(false);
 
-
+        handleUpload.setDisable(false);
         editQuantityButton.setDisable(true);
         inQuantity_Button.setDisable(true);
         addProduct_Button.setDisable(true);

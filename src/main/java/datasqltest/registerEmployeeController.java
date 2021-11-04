@@ -48,7 +48,7 @@ public class registerEmployeeController {
 //                if (users.checkUsername(username.getText())){
                 if (employees.checkUsername(username.getText())){
                     employees.registerEmployee(name.getText(),username.getText(),password.getText());
-                    error.setText("สมัครได้");
+                    error.setText("บันทึกข้อมูลสำเร็จ");
                 }else {
                     error.setText("username นี้มีแล้ว");
                     name.clear();

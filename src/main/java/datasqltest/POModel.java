@@ -168,14 +168,14 @@ public class POModel {
     }
 
 
-    public void update(int priceDB,int quantity_PO,String pn) {
+    public void update(int priceDB,int quantity_PO,String id) {
         DatabaseConnection connectionNow2 = new DatabaseConnection();
         Connection connectDB2 = connectionNow2.getConnection();
         int result = priceDB - quantity_PO;
 //                        int result = quantityDB - poModel.getQuantity_PO();
 //        String resultStr = String.valueOf(result);
 //                        String updateField = "UPDATE microchipapp.product SET all_quantity_P = + '" + resultStr + "' WHERE id_P = '" + poModel.getPn_PO() + "'";
-        String updateField = "UPDATE microchipapp.product SET all_quantity_P = + '" + result + "' WHERE id_P = '" + pn + "'";
+        String updateField = "UPDATE microchipapp.product SET all_quantity_P = + '" + result + "' WHERE id_P = '" + id + "'";
 //        String updateField = "UPDATE microchipapp.product SET all_quantity_P = + '" + editQuantity + "' WHERE id_P = '" + idProduct + "'";
 
         try {
@@ -220,25 +220,10 @@ public class POModel {
 
 //    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public boolean checkProduct(int quantity_PO ){
+    public boolean checkProduct(int quantity_PO , String namePro){
         DatabaseConnection connectionNow = new DatabaseConnection();
         Connection connectionDB = connectionNow.getConnection();
-        String connectQuery = "SELECT * FROM microchipapp.product";
+        String connectQuery = "SELECT all_quantity_P FROM microchipapp.product WHERE name_P = '" + namePro + "'";
 
         try {
             Statement statement = connectionDB.createStatement();

@@ -28,18 +28,12 @@ public class loginController {
     private PasswordField password;
 
     private employee employees;
-//    private user users;
 
     public void initialize(){
         employees = new employee();
-//        users = new user();
 
     }
 
-//    public void cancelButtonOnAction(ActionEvent event){
-//        Stage stage = (Stage) ปุ่มอะ.getSecene().getWindow();
-//        stage.close();
-//    }
 
     public void loginButtonOnAction(ActionEvent event) throws IOException {
 
@@ -53,46 +47,12 @@ public class loginController {
             stage.show();
 
         }
-//        if (users.checkLogin(username.getText(),password.getText())){
-//            Button b = (Button) event.getSource();
-//            Stage stage = (Stage) b.getScene().getWindow();
-//
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("product_list_page.fxml"));
-//            stage.setScene(new Scene(loader.load(),800,600));
-//
-//            stage.show();
-//        } else {
-//            error.setText("มึงผิดไอ้สัส");
-//            username.clear();
-//            password.clear();
-//        }
-    }
-
-//    @FXML
-//    public void registerButtonOnAction(ActionEvent event) throws IOException {
-//
-////        Button b = (Button) event.getSource();
-////        Stage stage = (Stage) b.getScene().getWindow();
-////
-////        FXMLLoader loader = new FXMLLoader(getClass().getResource("registerEmployee.fxml"));
-////        stage.setScene(new Scene(loader.load(),800,600));
-////
-////        stage.show();
-//        createAccountForm();
-//    }
-
-
-    public void createAccountForm(){
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("registerUser.fxml"));
-            Stage registerStage = new Stage();
-            registerStage.initStyle(StageStyle.DECORATED);
-            registerStage.setScene(new Scene(root,800,600));
-            registerStage.show();
-
-        }catch (Exception e){
-            e.printStackTrace();;
-            e.getCause();
+        else {
+            username.clear();
+            password.clear();
+            error.setText("ข้อมูลไม่ถูกต้อง");
         }
+
     }
+
 }
