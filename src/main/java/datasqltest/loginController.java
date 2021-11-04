@@ -81,6 +81,18 @@ public class loginController {
         createAccountForm();
     }
 
+    @FXML public void backButton(ActionEvent event) throws IOException {
+
+        Button b = (Button) event.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+        stage.setScene(new Scene(loader.load(),800,600));
+
+        stage.show();
+
+    }
+
     public void createAccountForm(){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("registerUser.fxml"));

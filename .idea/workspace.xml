@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51b79892-da0f-4018-a4ca-7eb42c90f476" name="Changes" comment="" />
+    <list default="true" id="51b79892-da0f-4018-a4ca-7eb42c90f476" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sa.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/homeEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/homeEmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datasqltest/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasqltest/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/datasqltest/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/datasqltest/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/datasqltest/homeEmployee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/datasqltest/homeEmployee.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/datasqltest/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/datasqltest/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/datasqltest/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datasqltest/DatabaseConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +62,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../newR" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../1/MicrochipStarApp" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -69,7 +82,20 @@
       <recent name="com.example.sa" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.HelloApplication (1)">
+    <configuration name="HelloApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="datasqltest.HelloApplication" />
+      <module name="sa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="datasqltest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.sa.HelloApplication" />
       <module name="sa" />
@@ -85,6 +111,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HelloApplication (1)" />
         <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
@@ -121,6 +148,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>

@@ -58,7 +58,7 @@ public class HomeController {
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("POpage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("market-view.fxml"));
         stage.setScene(new Scene(loader.load(),1080,680));
 
         stage.show();
