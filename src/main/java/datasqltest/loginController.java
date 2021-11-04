@@ -68,30 +68,19 @@ public class loginController {
 //        }
     }
 
-    @FXML
-    public void registerButtonOnAction(ActionEvent event) throws IOException {
-
-//        Button b = (Button) event.getSource();
-//        Stage stage = (Stage) b.getScene().getWindow();
+//    @FXML
+//    public void registerButtonOnAction(ActionEvent event) throws IOException {
 //
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("registerEmployee.fxml"));
-//        stage.setScene(new Scene(loader.load(),800,600));
-//
-//        stage.show();
-        createAccountForm();
-    }
+////        Button b = (Button) event.getSource();
+////        Stage stage = (Stage) b.getScene().getWindow();
+////
+////        FXMLLoader loader = new FXMLLoader(getClass().getResource("registerEmployee.fxml"));
+////        stage.setScene(new Scene(loader.load(),800,600));
+////
+////        stage.show();
+//        createAccountForm();
+//    }
 
-    @FXML public void backButton(ActionEvent event) throws IOException {
-
-        Button b = (Button) event.getSource();
-        Stage stage = (Stage) b.getScene().getWindow();
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
-        stage.setScene(new Scene(loader.load(),800,600));
-
-        stage.show();
-
-    }
 
     public void createAccountForm(){
         try {

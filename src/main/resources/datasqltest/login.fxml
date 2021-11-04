@@ -10,7 +10,6 @@
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="datasqltest.loginController">
     <children>
         <Button fx:id="loginButton" layoutX="373.0" layoutY="404.0" mnemonicParsing="false" onAction="#loginButtonOnAction" text="login" />
-        <Button fx:id="backButton" layoutX="735.0" layoutY="23.0" mnemonicParsing="false" onAction="#backButton" text="back" />
         <PasswordField fx:id="password" layoutX="307.0" layoutY="330.0" promptText="password" />
         <TextField fx:id="username" layoutX="307.0" layoutY="257.0" promptText="username" />
         <Label layoutX="367.0" layoutY="162.0" text="login">
@@ -18,7 +17,6 @@
                 <Font size="30.0" />
             </font>
         </Label>
-        <Button fx:id="registerButton" layoutX="459.0" layoutY="404.0" mnemonicParsing="false" onAction="#registerButtonOnAction" text="register" />
         <Label fx:id="error" layoutX="383.0" layoutY="374.0" />
     </children>
 </AnchorPane>

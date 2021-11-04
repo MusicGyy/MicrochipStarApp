@@ -57,8 +57,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="evidenceTexT" layoutX="126.0" layoutY="516.0" prefHeight="21.0" prefWidth="262.0" text="ธ.กสิกรไทยเลขบช : 031-8-41469-6" />
-      <Label fx:id="error" layoutX="262.0" layoutY="561.0" prefHeight="21.0" prefWidth="168.0" />
+      <Label fx:id="error" layoutX="262.0" layoutY="561.0" prefHeight="21.0" prefWidth="168.0" textFill="RED" />
       <Line endX="680.0" layoutX="400.0" layoutY="236.0" startX="100.0" />
       <Line endX="8.5" endY="300.79290771484375" layoutX="439.0" layoutY="300.0" startX="8.5" startY="99.5" />
       <Label layoutX="947.0" layoutY="238.0" text="ข้อมูลใบสั่งซื้อ">
