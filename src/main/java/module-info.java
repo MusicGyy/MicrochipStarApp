@@ -1,4 +1,4 @@
-module com.example.sa {
+module com.example.datasqltest {
     requires javafx.controls;
     requires javafx.fxml;
 //    requires java.sql;
@@ -7,5 +7,8 @@ module com.example.sa {
     requires mysql.connector.java;
     requires javafx.graphics;
 
-    opens com.example.sa;
+    opens datasqltest to javafx.fxml;
+    exports datasqltest;
+
+
 }
