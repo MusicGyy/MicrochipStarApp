@@ -240,7 +240,7 @@ public class POController implements Initializable {
                         e.printStackTrace();
                     }
                 clearDetail();
-                error.setText("ยืนยันการส่งซื้อ");
+                error.setText("ยืนยันการสั่งซื้อ");
 //            Button b = (Button) event.getSource();
 //            Stage stage = (Stage) b.getScene().getWindow();
 //            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("POpage.fxml"));
@@ -325,7 +325,7 @@ public class POController implements Initializable {
             summaryShowMailLabel.setText(email.getText());
             summaryShowNameLabel.setText(name.getText());
             summaryShowPhoneLabel.setText(phone.getText());
-            quantityText.setText(quantity.getText());
+            quantityText.setText(quantity.getText()+" ชิ้น");
 
 
 
@@ -348,7 +348,7 @@ public class POController implements Initializable {
                     float tp = price * priceDB;
                     tps = tp;
                     poModel.setTotal_price_PO(tp);
-                    total_price_text.setText(String.valueOf(tp));
+                    total_price_text.setText(String.valueOf(tp)+" บาท");
 
                     return true;
 //                float price = Float.parseFloat(quantity.getText());
